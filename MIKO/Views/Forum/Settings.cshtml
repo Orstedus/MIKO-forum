@@ -14,15 +14,15 @@
     <link rel="stylesheet" href="~/css/create.css" asp-append-version="true" />
 </head>
 <body>
-    <div class="createBody">
+    <div class="bodyCreate">
         <div class="homePlate">
             <p class="homeTitle">Settings</p>
             <form method="post" asp-controller="Forum" asp-action="Settings" style="margin-left: 62.5px;">
-                <p class="placeHolder">Nickname(max 12)</p>
+                <p class="placeHolder">Nickname(max 12, Required)</p>
                 <input asp-for="Login" class="titleInput" placeholder="Nickname..." value=@CurrentUserModel.CurrentUser.Login>
-                <p class="placeHolder">Description(max 100)</p>
-                <textarea asp-for="Description" class="textInput" placeholder="Description...">No description yet...</textarea>
-                <p class="placeHolder">Password</p>
+                <p class="placeHolder">Description(max 100, Required)</p>
+                <textarea asp-for="Description" class="textInput" placeholder="Description...">CurrentUserModel.CurrentUser.Description</textarea>
+                <p class="placeHolder">Password(max 15, Required)</p>
                 <input asp-for="Password" class="titleInput" type="password" placeholder="Password..." value=@CurrentUserModel.CurrentUser.Password>
                 <button class="submitButton" type="submit">Accept changes</button>
                 @if (ViewData["ValidateMessage"] != null)

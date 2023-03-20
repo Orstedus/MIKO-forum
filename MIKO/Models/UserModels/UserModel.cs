@@ -8,6 +8,7 @@ namespace MIKO.Models.UserModels
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Поле должно быть заполнено")]
+        [StringLength(12, MinimumLength =3)]
         public string Login { get; set; }
 
         [Required(ErrorMessage = "Поле должно быть заполнено")]
@@ -15,6 +16,7 @@ namespace MIKO.Models.UserModels
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Поле должно быть заполнено")]
+        [StringLength (15, MinimumLength = 5)]
         public string Password { get; set; }
 
         public string Description { get; set; } = "No description yet...";

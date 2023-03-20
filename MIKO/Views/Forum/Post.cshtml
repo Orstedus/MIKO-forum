@@ -17,7 +17,7 @@
             <div class="postBody">
                 <p class="homePostTitle">@Model.Title</p>
                 <p class="homePostAuthor" style="font-size:16px; color:gray; margin-top:-10px;">@Model.Id.ToString("0000")</p>
-                <p class="homePostAuthor">@Model.AuthorLogin</p>
+                <p class="homePostAuthor" style="cursor:pointer;" onclick="location.href='/Forum/Profile/@Model.AuthorId'">@Model.AuthorLogin</p>
                 <p class="homePostText">@Model.Text</p>
             </div>
         </div>
