@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+JP&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.headerPlate {
+    width: 100%;
+    height: 60px;
+    background-color: #1A171F;
+    display: flex;
+    border-collapse: collapse;
+}
+
+.logoPlate{
+    display: flex;
+    vertical-align: center;
+}
+
+.logoPlate img{
+    margin-left: 10px;
+    margin-top: 9px;
+    width: 42px;
+    height: 42px;
+    animation-name: rotate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.logoPlate p{
+    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+    color: white;
+    font-size: 32px;
+    margin-right: 15px;
+}
+
+
+
+.leftPlate{
+    display: flex;
+}
+
+    .leftPlate a {
+        margin-top: 15px;
+        font-family: 'Noto Sans JP', sans-serif;
+        color: #FFFFFF;
+        font-size: 18px;
+        margin-left: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-decoration: none
+    }
+
+.leftPlate a:hover{
+    margin-top: 15px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: rgb(173, 173, 173);
+    font-size: 19px;
+    margin-left: 25px;
+}
+
+.rightPlate{
+    display: flex;
+    position: absolute;
+    right: 0;
+    
+}
+
+    .rightPlate a {
+        margin-top: 15px;
+        font-family: 'Noto Sans JP', sans-serif;
+        color: white;
+        font-size: 18px;
+        margin-right: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-decoration: none
+    }
+
+.rightPlate a:hover{
+    margin-top: 15px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: rgb(173, 173, 173);
+    font-size: 19px;
+    margin-right: 25px;
+}
+
+.profilePlate {
+    display: flex;
+    text-align: center;
+    line-height: 6px;
+    background-color: #110f14;
+    padding: 1.5px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.nickName{
+    font-family: 'Noto Sans JP', sans-serif;
+    color: white;
+    font-size: 16px;
+    margin-top: 12.5px;
+}
+
+.idPlate {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #686868;
+    font-size: 16px;
+    margin-top: 0px;
+}
+
+.avatar{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 3px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+  
+    to {
+        transform: rotate(360deg);
+    }
+  }

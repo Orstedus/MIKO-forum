@@ -1,0 +1,32 @@
+﻿@using MIKO.Models.UserModels
+@model UserModel
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="register.css" rel="stylesheet" type="text/css">
+    <title>Register - MIKA</title>
+</head>
+<body>
+    <div class="bodyRegister">
+        <div class="logoplate" style="text-align:center;">
+            <img src="~/css/images/icon.png" class="icon" />
+            <p>MIKO</p>
+        </div>
+        <p class="loginTitle">REGISTER</p>
+        <form asp-action="Register" asp-controller="Account" method="post" style="text-align:center;">
+            <input asp-for="Login" placeholder="Login" />
+            <input asp-for="Email" placeholder="Email" type="email" />
+            <input asp-for="Password" placeholder="Password" />
+            <div style="display:flex; justify-content: center; align-items: center;">
+                <button type="submit" class="submit">Register</button>
+            </div>
+            <a href="/Account/Login" style="color:white; font-size:15px; cursor:pointer; margin-top:50px;">Already have an account? Login!</a>
+        </form>
+    </div>
+</body>
+</html>

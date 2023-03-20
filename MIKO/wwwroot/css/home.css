@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+JP&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow: auto;
+    scrollbar-width: thin;
+    color-scheme: dark light;
+}
+
+body{
+    background-image: url("images/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 99%;
+    height: 100%;
+}
+
+.bodyHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidePlate {
+    text-align: center;
+    width: 275px;
+    background-color: rgba(43, 39, 52, 0.75);
+    border-radius: 15px;
+    margin: 50px;
+    padding:30px;
+}
+
+.sidePlateElement {
+    width: 200px;
+    height: 50px;
+    background-color: #17161A;
+    margin: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidePlateElement:hover {
+    background-color: #0f0e11;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.sidePlateElement p{
+    color: white;
+    font-size: 18px;
+    font-family: 'Noto Sans JP', sans-serif;
+    text-align: center;
+    margin-top: 27.5px;
+    line-height: 45px;
+}
+
+.sidePlateTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: white;
+}
+
+.homePlate {
+    min-height: 1095px;
+    height: 100%;
+    width: 1095px;
+    background-color: rgba(43, 39, 52, 0.5);
+    padding: 50px;
+    margin-bottom:-50px;
+}
+
+.homeTitle {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+.homePlateElement {
+    width: 860px;
+    height: 120px;
+    border-radius: 15px;
+    background-color: #17161A;
+    padding: 10px;
+    margin: auto;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.homePlateElement:hover {
+    border-radius: 10px;
+    background-color: #0f0e11;
+}
+
+.homePlateElementTitle {
+    color: white;
+    font-size: 18px;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-bottom: 3px;
+}
+
+.homePlateElementText{
+    color: #B3B3B3;
+    font-size: 14px;
+    font-family: 'Noto Sans JP', sans-serif;
+    height:50px;
+    overflow:hidden;
+}
+
+.homePlateElementAuthor {
+    margin-bottom: 0px;
+    color: #747474;
+    font-size: 13px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.idInput {
+    display: list-item;
+    background-color: #1A171F;
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 45px;
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 28px;
+    padding: 10px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+}
+
+.idButton {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: white;
+    background-color: #1A171F;
+    font-size: 20px;
+    width: 175px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+    .idButton:hover {
+        background-color: #0d0b0f;
+    }

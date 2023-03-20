@@ -1,0 +1,29 @@
+﻿@using MIKO.Models.UserModels
+@model UserLoginModel
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+    <title>Login - MIKA</title>
+</head>
+<body>
+    <div class="bodyLogin">
+        <div class="logoplate">
+            <img src="~/css/images/icon.png" class="icon" />
+            <p>MIKO</p>
+        </div>
+        <p class="loginTitle">LOGIN</p>
+        <form asp-action="Login" asp-controller="Account" method="post">
+            <input asp-for="Login" placeholder="Login" />
+            <input asp-for="Password" placeholder="Password" type="password" class="passwordInput" />
+            <div style="display:flex; justify-content: center; align-items: center;">
+                <button type="submit" class="submit">Log In</button>
+            </div>
+        </form>
+        <a href="/Account/Register" style="color:white; font-size:15px; cursor:pointer; margin-top:20px; text-align:center;">Hasn`t got account yet? Register!</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+JP&display=swap');
+
+body{
+    width:99%;
+    height:100%;
+    background-color: #2B2734;
+}
+
+.bodyLogin {
+    display: grid;
+    place-items: center;
+}
+
+.logoplate {
+    margin-top: 50px;
+    display: flex;
+
+}
+.logoplate img{
+    margin-top: 5px;
+    width: 45px;
+    height: 45px;
+    animation-name: rotate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.logoplate p{
+    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    color: white;
+}
+
+.loginTitle{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+form input{
+    display: list-item;
+    background-color: #1A171F;
+    border: none;
+    outline: none;
+    width: 380px;
+    height: 45px;
+    color: white;
+    border-radius:15px;
+    margin-bottom: 28px;
+    padding: 10px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+}
+.passwordInput:focus{
+    font-size: 10px;
+}
+
+.logedInBox{
+    display: flex;
+    
+}
+
+.logedInBox input{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #1A171F;
+    margin-top: 10px;
+
+}
+
+.logedInBox p{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    color: white;
+    margin-left: 10px;
+}
+
+.submit{
+    font-family: 'Noto Sans JP', sans-serif;
+    color: white;
+    background-color: #1A171F;
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.submit:hover{
+    background-color: #0d0b0f;
+    width: 210px;
+    height: 60px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+  
+    to {
+        transform: rotate(360deg);
+    }
+  }

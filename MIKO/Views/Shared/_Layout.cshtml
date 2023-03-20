@@ -1,0 +1,46 @@
+﻿@using MIKO.Models.CoctailModels;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MIKO</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MIKO.styles.css" asp-append-version="true" />
+</head>
+<link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
+<div class="headerPlate">
+    <div class="leftPlate">
+        <div class="logoPlate">
+            <img src="~/css/images/icon.png">
+            <p>MIK0</p>
+        </div>
+        <a style="color:white;" href="/Forum/Home">Home</a>
+        <a style="color:white;" href="/Forum/Create">Create</a>
+    </div>
+    <div class="rightPlate">
+        <a style="color:white;" href="/Account/LogOut">LogOut</a>
+        <a style="color:white;" href="/Forum/Settings">Settings</a>
+        <div class="profilePlate" onclick="location.href='/Forum/Profile/@CurrentUserModel.CurrentUser.Id'">
+            <div class="profilePlateName">
+                <p class="nickName">@CurrentUserModel.CurrentUser.Login</p>
+                <p class="idPlate">@CurrentUserModel.CurrentUser.Id.ToString("0000")</p>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Juvenile_Ragdoll.jpg" class="avatar">
+        </div>
+    </div>
+</div>
+<body>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

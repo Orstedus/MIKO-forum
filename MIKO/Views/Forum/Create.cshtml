@@ -1,0 +1,26 @@
+﻿@using MIKO.Models.PostsModels
+@model PostCreateModel
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="create.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="~/css/create.css" asp-append-version="true" />
+    <title>Create - MIKO</title>
+</head>
+<body>
+    <div class="bodyCreate">
+        <div class="homePlate">
+            <p class="homeTitle">Create Post</p>
+            <form asp-action="Create" asp-controller="Forum" style="margin-left: 62.5px;" method="post">
+                <p class="placeHolder">Post title(max 40)</p>
+                <input asp-for="Title" class="titleInput" placeholder="Title...">
+                <p class="placeHolder">Post text(max 2000)</p>
+                <textarea asp-for="Text" class="textInput" placeholder="Text..."></textarea>
+                <button class="submitButton">Create</button>
+            </form>
+        </div>
+    </div>
+</body>

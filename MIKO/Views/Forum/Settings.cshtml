@@ -1,0 +1,36 @@
+﻿@using MIKO.Models.UserModels;
+@using MIKO.Models.CoctailModels;
+@model UserProfileModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="settings.css" rel="stylesheet" type="text/css">
+    <title>Settings - MIKO</title>
+    <link rel="stylesheet" href="~/css/create.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="createBody">
+        <div class="homePlate">
+            <p class="homeTitle">Settings</p>
+            <form method="post" asp-controller="Forum" asp-action="Settings" style="margin-left: 62.5px;">
+                <p class="placeHolder">Nickname(max 12)</p>
+                <input asp-for="Login" class="titleInput" placeholder="Nickname..." value=@CurrentUserModel.CurrentUser.Login>
+                <p class="placeHolder">Description(max 100)</p>
+                <textarea asp-for="Description" class="textInput" placeholder="Description...">No description yet...</textarea>
+                <p class="placeHolder">Password</p>
+                <input asp-for="Password" class="titleInput" type="password" placeholder="Password..." value=@CurrentUserModel.CurrentUser.Password>
+                <button class="submitButton" type="submit">Accept changes</button>
+                @if (ViewData["ValidateMessage"] != null)
+                {
+                    <a class="ErrorMessage">@ViewData["ValidateMessage"]</a>
+                }
+            </form>
+        </div>
+    </div>
+</body>
+</html>

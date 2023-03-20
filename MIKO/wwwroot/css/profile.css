@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+JP&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow: auto;
+    scrollbar-width: thin;
+    color-scheme: dark light;
+}
+
+body{
+    background-image: url("images/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 99%;
+    height: 100%;
+}
+
+.bodyProfile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homePlate{
+    min-height: 965px;
+    width: 1095px;
+    background-color: rgba(43, 39, 52, 0.5);
+    text-align: center;
+}
+
+.homeTitle {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 30px;
+    margin-left: 62.5px;
+    margin-top: 75px;
+}
+
+.avatarProfile {
+    width: 150px;
+    height: 150px;
+    border-radius:500px;
+    margin-top: 150px;
+    border: 3px white solid;
+}
+
+.nickNameProfile {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.disc {
+    color: rgb(170, 170, 170);
+    margin: auto;
+    margin-top: 10px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px;
+    width: 700px;
+}
+
+.item{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 22px;
+    margin-top: 75px;
+}
+
+.homePlateElement {
+    width: 960px;
+    height: 110px;
+    border-radius: 15px;
+    background-color: #17161A;
+    padding: 10px;
+    margin: auto;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.homePlateElement:hover {
+    border-radius: 10px;
+    background-color: #0f0e11;
+}
+
+.homePlateElementTitle {
+    color: white;
+    font-size: 18px;
+    font-family: 'Noto Sans JP', sans-serif;
+    text-align: left;
+}
+
+.homePlateElementText {
+    color: #B3B3B3;
+    font-size: 14px;
+    font-family: 'Noto Sans JP', sans-serif;
+    height: 50px;
+    overflow: hidden;
+    text-align:left;
+    margin-top:-10px;
+}
