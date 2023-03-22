@@ -20,6 +20,28 @@
                 <p class="homePostAuthor" style="cursor:pointer;" onclick="location.href='/Forum/Profile/@Model.AuthorId'">@Model.AuthorLogin</p>
                 <p class="homePostText">@Model.Text</p>
             </div>
+            @if(Model.Comments != null)
+            { 
+                foreach (var item in @Model.Comments.ToList())
+                {
+                    <div class="postComment">
+                        <h3>@item.AuthorLogin</h3>
+                        <p>@item.Text</p>
+                    </div>
+                    <p>AAAA</p>
+                }
+                <p>VVVVVV</p>
+            }
+            else
+            {
+                <p class="commentTitle" style="text-align:center; margin-top:40px;">No comments yet!</p>
+            }
+            <form method="post" asp-action="Comment" asp-controller="Forum">
+                <p class="commentTitle">Create new comment</p>
+                <input type="hidden" asp-for="parentId" value="@Model.Id" />
+                <textarea asp-for="Text" resize="none" class="commentInput" placeholder="Your comment there..."></textarea>
+                <button type="submit" class="commentButton">Send</button>
+            </form>
         </div>
     </div>
 </body>

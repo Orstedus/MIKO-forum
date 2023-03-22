@@ -117,3 +117,70 @@ body {
     color: rgb(201, 201, 201);
     font-size: 13px;
 }
+
+.commentTitle {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 25px;
+    margin-left: 70px;
+    margin-top: 25px;
+}
+
+.commentInput {
+    margin-top: 20px;
+    background-color: #1A171F;
+    border: none;
+    outline: none;
+    width: 350px;
+    height: 150px;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px;
+    text-align: left;
+    margin-left: 70px;
+    display: block;
+}
+
+.commentButton {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: white;
+    background-color: #1A171F;
+    font-size: 20px;
+    width: 175px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    display: block;
+    margin-top: 15px;
+    margin-left: 70px;
+}
+
+    .commentButton:hover {
+        background-color: #17141d;
+    }
+
+.postComment {
+    font-family: 'Noto Sans JP', sans-serif;
+    text-align: left;
+    width: 960px;
+    border-radius: 15px;
+    background-color: #1a191f;
+    padding: 20px;
+    margin: auto;
+    margin-top: 25px;
+}
+
+    .postComment h3 {
+        color: white;
+        font-size: 15px;
+    }
+
+    .postComment p {
+        color: rgb(207, 207, 207);
+        font-size: 13px;
+    }

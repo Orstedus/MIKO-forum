@@ -14,7 +14,10 @@ namespace MIKO.Models.PostsModels
         public string Text { get; set; }
 
         public int AuthorId { get; set; }
+        public int parentId { get; set; }
 
         public string AuthorLogin { get; set; }
+
+        public List<PostCommentModel?> Comments { get; set; } = new List<PostCommentModel?>();
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using MIKO.Models.PostsModels;
 using MIKO.Models.UserModels;
 using MIKO.Models.CoctailModels;
+using Microsoft.AspNetCore.Http.Extensions;
 
 namespace MIKO.Controllers
 {
@@ -56,7 +57,7 @@ namespace MIKO.Controllers
 
         public async Task<IActionResult> Post(int id)
         {
-            PostModel postView =  db.Posts.FirstOrDefault(i => i.Id == id);
+            PostModel postView =  db.Posts.Include(x => x.Comments).FirstOrDefault(i => i.Id == id);
             if (postView != null)
             {
                 return View(postView);
@@ -113,6 +114,20 @@ namespace MIKO.Controllers
             {
                 var user = db.Posts.FirstOrDefault(x => x.Id == id);
                 return Redirect("Post/" + id);
+            }
+            return RedirectToAction("Home", "Forum");
+        }
+
+        [HttpPost]
+        public IActionResult Comment(PostCommentModel comment)
+        {
+            comment.AuthorId = CurrentUserModel.CurrentUser.Id;
+            comment.AuthorLogin = CurrentUserModel.CurrentUser.Login;
+            if(comment!=null)
+            {
+                db.Posts.FirstOrDefault(x => x.Id == comment.parentId).Comments.Add(comment);
+                db.SaveChanges();
+                return Redirect("/Forum/Post/" + comment.parentId);
             }
             return RedirectToAction("Home", "Forum");
         }
