@@ -21,7 +21,8 @@
                 <p class="homePostText">@Model.Text</p>
             </div>
             @if(Model.Comments != null)
-            { 
+            {
+                <p class="commentTitle" style="margin-top:35px;">Comments</p>
                 foreach (var item in @Model.Comments.ToList())
                 {
                     <div class="postComment">
