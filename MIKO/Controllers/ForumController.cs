@@ -8,6 +8,12 @@ using MIKO.Models.PostsModels;
 using MIKO.Models.UserModels;
 using MIKO.Models.CoctailModels;
 using Microsoft.AspNetCore.Http.Extensions;
+using System.Web;
+using Microsoft.AspNetCore.Hosting.Server;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+
 
 namespace MIKO.Controllers
 {
@@ -17,6 +23,9 @@ namespace MIKO.Controllers
 
         ApplicationContext db;
         public ForumController(ApplicationContext context) { db = context; }
+
+        private IWebHostEnvironment Environment;
+
 
         [HttpGet]
         public IActionResult Home()
@@ -131,5 +140,35 @@ namespace MIKO.Controllers
             }
             return RedirectToAction("Home", "Forum");
         }
+
+
+
+        [HttpPost]
+        public IActionResult Upload(List<IFormFile> postedFiles)
+        {
+            string wwwPath = this.Environment.WebRootPath;
+            string contentPath = this.Environment.ContentRootPath;
+
+            string path = Path.Combine(this.Environment.WebRootPath, "uploads");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            List<string> uploadedFiles = new List<string>();
+            foreach (IFormFile postedFile in postedFiles)
+            {
+                string fileName = Path.GetFileName(postedFile.FileName);
+                using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
+                {
+                    postedFile.CopyTo(stream);
+                    uploadedFiles.Add(fileName);
+                    ViewBag.Message += fileName + ",";
+                }
+            }
+            return View();
+        }
+
+
     }
 }

@@ -28,7 +28,12 @@
                 <textarea asp-for="Description" class="textInput" placeholder="Description...">CurrentUserModel.CurrentUser.Description</textarea>
                 <p class="placeHolder">Password(max 15, Required)</p>
                 <input asp-for="Password" class="titleInput" type="password" placeholder="Password..." value=@CurrentUserModel.CurrentUser.Password>
-                <button class="submitButton" type="submit">Accept changes</button>
+                <p class="placeHolder">Avatar</p>
+                @using (Html.BeginForm("Upload", "Forum", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <input name = "ActionName" style="color:white;" type="file" name="upload" />
+                }
+                <button style="margin-left:55px;" class="submitButton" type="submit">Accept changes</button>
                 @if (ViewData["ValidateMessage"] != null)
                 {
                     <a class="ErrorMessage">@ViewData["ValidateMessage"]</a>
