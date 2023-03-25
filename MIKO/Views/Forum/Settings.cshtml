@@ -1,6 +1,6 @@
 ﻿@using MIKO.Models.UserModels;
 @using MIKO.Models.CoctailModels;
-@model UserProfileModel
+@model AvatarProfileModel
 
 @{
     ViewData["Title"] = "Settings";
@@ -21,6 +21,11 @@
     <div class="bodyCreate">
         <div class="homePlate">
             <p class="homeTitle">Settings</p>
+            <form method="post" asp-controller="Forum" asp-action="Avatar" style="margin-left: 62.5px;" enctype="multipart/form-data">
+                <p class="placeHolder">Avatar</p>
+                <input type="file" style="color:white;" name="Avatar" accept="image/jpeg" asp-for="Avatar" />
+                <button class="submitButton" type="submit">Accept changes</button>
+            </form>
             <form method="post" asp-controller="Forum" asp-action="Settings" style="margin-left: 62.5px;">
                 <p class="placeHolder">Nickname(max 12, Required)</p>
                 <input asp-for="Login" class="titleInput" placeholder="Nickname..." value=@CurrentUserModel.CurrentUser.Login>
@@ -28,12 +33,7 @@
                 <textarea asp-for="Description" class="textInput" placeholder="Description...">CurrentUserModel.CurrentUser.Description</textarea>
                 <p class="placeHolder">Password(max 15, Required)</p>
                 <input asp-for="Password" class="titleInput" type="password" placeholder="Password..." value=@CurrentUserModel.CurrentUser.Password>
-                <p class="placeHolder">Avatar</p>
-                @using (Html.BeginForm("Upload", "Forum", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                {
-                    <input name = "ActionName" style="color:white;" type="file" name="upload" />
-                }
-                <button style="margin-left:55px;" class="submitButton" type="submit">Accept changes</button>
+                <button class="submitButton" type="submit">Accept changes</button>
                 @if (ViewData["ValidateMessage"] != null)
                 {
                     <a class="ErrorMessage">@ViewData["ValidateMessage"]</a>

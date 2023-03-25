@@ -97,8 +97,28 @@ namespace MIKO.Controllers
                         return RedirectToAction("Home", "Forum");
                     }
                 }
+
             }
             return View();
+        }
+
+        [HttpPost]
+
+        public IActionResult Avatar(AvatarModel model)
+        {
+
+            if (model.Avatar == null || model.Avatar.Length == 0)
+            {
+                return Content("Файл не выбран");
+            }
+
+            var path = Path.Combine("wwwroot/uploads", CurrentUserModel.CurrentUser.Id.ToString() + ".jpg");
+
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                model.Avatar.CopyTo(stream);
+            }
+            return RedirectToAction("Home", "Forum");
         }
 
         [HttpGet]
@@ -140,35 +160,6 @@ namespace MIKO.Controllers
             }
             return RedirectToAction("Home", "Forum");
         }
-
-
-
-        [HttpPost]
-        public IActionResult Upload(List<IFormFile> postedFiles)
-        {
-            string wwwPath = this.Environment.WebRootPath;
-            string contentPath = this.Environment.ContentRootPath;
-
-            string path = Path.Combine(this.Environment.WebRootPath, "uploads");
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-
-            List<string> uploadedFiles = new List<string>();
-            foreach (IFormFile postedFile in postedFiles)
-            {
-                string fileName = Path.GetFileName(postedFile.FileName);
-                using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
-                {
-                    postedFile.CopyTo(stream);
-                    uploadedFiles.Add(fileName);
-                    ViewBag.Message += fileName + ",";
-                }
-            }
-            return View();
-        }
-
 
     }
 }

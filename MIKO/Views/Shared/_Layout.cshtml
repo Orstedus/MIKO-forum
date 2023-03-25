@@ -1,4 +1,7 @@
 ﻿@using MIKO.Models.CoctailModels;
+@{
+    string avatarUrl = "/uploads/" + CurrentUserModel.CurrentUser.Id.ToString() + ".jpg";
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +32,7 @@
                 <p class="nickName">@CurrentUserModel.CurrentUser.Login</p>
                 <p class="idPlate">@CurrentUserModel.CurrentUser.Id.ToString("0000")</p>
             </div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Juvenile_Ragdoll.jpg" class="avatar">
+            <img class="avatar" src=@avatarUrl>
         </div>
     </div>
 </div>

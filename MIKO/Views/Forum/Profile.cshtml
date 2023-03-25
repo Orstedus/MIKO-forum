@@ -18,7 +18,7 @@
 <body>
     <div class="bodyProfile">
         <div class="homePlate">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Juvenile_Ragdoll.jpg" class="avatarProfile">
+            <img src="~/uploads/@{@Model.user.Id}.jpg" class="avatarProfile">
             <p class="nickNameProfile">@Model.user.Login</p>
             <p class="nickNameProfile" style="font-size:16px; color:gray; margin-top:-10px;">@Model.user.Id.ToString("0000")</p>
             <p class="disc">@Model.user.Description</p>
